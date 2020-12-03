@@ -41,10 +41,11 @@ object Domain {
   @derive(snakeCodec)
   final case class Solution(histFilm: List[Int], histAll: List[Int])
   object Solution {
-    def filmFrom(ratings: Map[Int, Int]): Solution = {
+    def from(film: Map[Int, Int],
+             all: Map[Int, Int]): Solution = {
       Solution(
-        histFilm = ratings.toList.sortBy(_._1).map(_._2),
-        histAll = Nil
+        histFilm = film.toList.sortBy(_._1).map(_._2),
+        histAll = all.toList.sortBy(_._1).map(_._2)
       )
     }
 
