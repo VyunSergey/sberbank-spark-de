@@ -1,5 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
-### SBT template
+### IDEA
 .idea/
 
 ### SBT template
@@ -16,6 +16,7 @@ project/boot/
 project/plugins/project/
 .history
 .cache
+.bsp
 .lib/
 
 ### Scala template
