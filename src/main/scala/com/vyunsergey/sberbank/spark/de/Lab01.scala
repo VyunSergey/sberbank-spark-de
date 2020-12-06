@@ -65,7 +65,7 @@ object Lab01 extends IOApp {
                          (maxConcurrent: Int): IO[Stream[IO, A]] = {
     StreamReader[IO]
       .read(srcPath)
-      .filter(_.length > 0)
+      .filter(_.nonEmpty)
       .through(StreamTransformer[IO].transformAsync(a => mapper(a).pure[IO], maxConcurrent))
       .pure[IO]
   }
